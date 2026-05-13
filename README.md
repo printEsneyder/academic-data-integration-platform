@@ -225,6 +225,8 @@ el dashboard fue desarrollado con react y permite visualizar toda la informacion
 | ---------------------------------------------- | ---------------- |
 | [http://localhost:5173](http://localhost:5173) | dashboard visual |
 
+<img width="1920" height="1080" alt="{F7B6A282-9AA8-44D4-A63A-A8F60190F998}" src="https://github.com/user-attachments/assets/3afbfe3f-361a-4998-8e7e-343a7685a11e" />
+
 ---
 
 # resultados obtenidos
