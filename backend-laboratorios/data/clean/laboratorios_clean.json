@@ -1,0 +1,32 @@
+[
+  {
+    "id_estudiante": "1085500001",
+    "nombre": "Esneyder Ibarra",
+    "semestre": 5,
+    "fecha": "2026/05/10",
+    "hora_entrada": "08:00 AM",
+    "hora_salida": "10:30 AM",
+    "equipo": "PC-01",
+    "duracion_horas": 2.5
+  },
+  {
+    "id_estudiante": "1085500002",
+    "nombre": "Jhon Bolaños",
+    "semestre": 6,
+    "fecha": "10-05-2026",
+    "hora_entrada": "09:15 AM",
+    "hora_salida": "11:00 AM",
+    "equipo": "PC-02",
+    "duracion_horas": 1.75
+  },
+  {
+    "id_estudiante": "1085500003",
+    "nombre": "German Andrade",
+    "semestre": 4,
+    "fecha": "2026-05-11",
+    "hora_entrada": "01:00 PM",
+    "hora_salida": "03:30 PM",
+    "equipo": "PC-03",
+    "duracion_horas": 2.5
+  }
+]
