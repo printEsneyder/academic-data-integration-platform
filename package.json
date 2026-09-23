@@ -1,7 +1,7 @@
 {
-  "name": "proyecto-etl",
+  "name": "academic-data-integration-platform",
   "version": "1.0.0",
-  "description": "Pipeline ETL y dashboard académico - Universidad Mariana",
+  "description": "Plataforma de integracion de datos academicos: PostgreSQL, MongoDB y CSV unificados en un dashboard visual",
   "private": true,
   "scripts": {
     "install:all": "npm install --prefix academic-record && npm install --prefix backend-biblioteca && npm install --prefix backend-laboratorios && npm install --prefix core-dwh && npm install --prefix dashboard-dwh",

@@ -1,8 +1,7 @@
 # Dependencias
 node_modules/
 
-# Archivos de entorno (nunca subir credenciales reales)
-.env
+# Archivos de entorno locales (opcional mantenerlos públicos para pruebas académicas)
 .env.local
 .env.*.local
 
