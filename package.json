@@ -1,0 +1,18 @@
+{
+  "name": "proyecto-etl",
+  "version": "1.0.0",
+  "description": "Pipeline ETL y dashboard académico - Universidad Mariana",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix academic-record && npm install --prefix backend-biblioteca && npm install --prefix backend-laboratorios && npm install --prefix core-dwh && npm install --prefix dashboard-dwh",
+    "dev:academic": "npm run dev --prefix academic-record",
+    "dev:biblioteca": "npm run dev --prefix backend-biblioteca",
+    "dev:laboratorios": "npm run dev --prefix backend-laboratorios",
+    "dev:core": "npm run dev --prefix core-dwh",
+    "dev:dashboard": "npm run dev --prefix dashboard-dwh",
+    "dev": "concurrently -n ACADEMIC,BIBLIOTECA,LABORATORIOS,CORE,DASHBOARD -c cyan,magenta,yellow,blue,green \"npm run dev:academic\" \"npm run dev:biblioteca\" \"npm run dev:laboratorios\" \"npm run dev:core\" \"npm run dev:dashboard\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

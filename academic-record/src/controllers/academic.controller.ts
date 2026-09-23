@@ -8,97 +8,41 @@ import {
   getCalificaciones
 } from "../repositories/academic.repository";
 
-export const estudiantesController = async (
-  req: Request,
-  res: Response
-) => {
+const responderConData = async (res: Response, accion: () => Promise<any[]>, mensaje: string) => {
   try {
-    const data = await getEstudiantes();
+    const data = await accion();
 
     res.json({
       success: true,
+      total: data.length,
       data
     });
   } catch (error) {
+    console.error(mensaje, error);
+
     res.status(500).json({
       success: false,
-      message: "Error obteniendo estudiantes"
+      message: mensaje
     });
   }
 };
 
-export const asignaturasController = async (
-  req: Request,
-  res: Response
-) => {
-  try {
-    const data = await getAsignaturas();
-
-    res.json({
-      success: true,
-      data
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: "Error obteniendo asignaturas"
-    });
-  }
+export const estudiantesController = async (req: Request, res: Response) => {
+  await responderConData(res, getEstudiantes, "Error obteniendo estudiantes");
 };
 
-export const cursosController = async (
-  req: Request,
-  res: Response
-) => {
-  try {
-    const data = await getCursos();
-
-    res.json({
-      success: true,
-      data
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: "Error obteniendo cursos"
-    });
-  }
+export const asignaturasController = async (req: Request, res: Response) => {
+  await responderConData(res, getAsignaturas, "Error obteniendo asignaturas");
 };
 
-export const matriculasController = async (
-  req: Request,
-  res: Response
-) => {
-  try {
-    const data = await getMatriculas();
-
-    res.json({
-      success: true,
-      data
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: "Error obteniendo matrículas"
-    });
-  }
+export const cursosController = async (req: Request, res: Response) => {
+  await responderConData(res, getCursos, "Error obteniendo cursos");
 };
 
-export const calificacionesController = async (
-  req: Request,
-  res: Response
-) => {
-  try {
-    const data = await getCalificaciones();
+export const matriculasController = async (req: Request, res: Response) => {
+  await responderConData(res, getMatriculas, "Error obteniendo matrículas");
+};
 
-    res.json({
-      success: true,
-      data
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: "Error obteniendo calificaciones"
-    });
-  }
+export const calificacionesController = async (req: Request, res: Response) => {
+  await responderConData(res, getCalificaciones, "Error obteniendo calificaciones");
 };

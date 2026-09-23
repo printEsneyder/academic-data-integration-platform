@@ -18,7 +18,7 @@ pool.connect()
     console.log("Conectado a PostgreSQL correctamente");
   })
   .catch((error: any) => {
-    console.error("Error conectando PostgreSQL:", error);
+    console.error("Error conectando PostgreSQL:", error.message || error);
   });
 
 app.get("/", (req, res) => {
@@ -26,6 +26,16 @@ app.get("/", (req, res) => {
     success: true,
     message: "Academic Record funcionando correctamente"
   });
+});
+
+app.get("/health", async (req, res) => {
+  try {
+    await pool.query("SELECT 1");
+
+    res.json({ success: true, database: "online" });
+  } catch (error) {
+    res.status(503).json({ success: false, database: "offline" });
+  }
 });
 
 const PORT = process.env.PORT || 3000;

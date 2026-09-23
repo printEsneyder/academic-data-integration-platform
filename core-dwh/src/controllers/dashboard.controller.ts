@@ -6,23 +6,19 @@ export const getDashboard = async (
   req: Request,
   res: Response
 ) => {
-
   try {
-
     const data = await obtenerDashboard();
 
     res.json({
       success: true,
       data
     });
-
   } catch (error) {
+    console.error(error);
 
     res.status(500).json({
       success: false,
       message: "Error obteniendo dashboard"
     });
-
   }
-
 };
