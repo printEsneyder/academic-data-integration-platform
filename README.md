@@ -69,39 +69,6 @@ flowchart LR
 3. `core-dwh` lanza las tres consultas en paralelo con `Promise.all` y fusiona los resultados en un único objeto, calculando además los totales del tablero.
 4. El dashboard pide ese objeto una sola vez y dibuja cada indicador.
 
-## Capturas de pantalla
-
-<p align="center">
-  <img src="assets/screenshots/dashboard.png" alt="Vista principal del tablero con tarjetas de indicadores y gráficas" width="100%">
-</p>
-
-<table>
-  <tr>
-    <td align="center" width="460"><strong>Estudiantes por semestre</strong><br>Gráfica de dona con la distribución</td>
-    <td align="center" width="460"><strong>Uso de la biblioteca</strong><br>Horas de lectura digital por estudiante</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="assets/screenshots/estudiantes-semestre.png" alt="Gráfica de dona de estudiantes por semestre" width="460"></td>
-    <td align="center"><img src="assets/screenshots/biblioteca.png" alt="Gráfica de barras de uso de la biblioteca" width="460"></td>
-  </tr>
-  <tr>
-    <td align="center" width="460"><strong>Horas por equipo</strong><br>Equipos de laboratorio más utilizados</td>
-    <td align="center" width="460"><strong>Horas por estudiante</strong><br>Uso de laboratorios en vista de radar</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="assets/screenshots/laboratorio-equipos.png" alt="Gráfica de barras horizontales de horas por equipo" width="460"></td>
-    <td align="center"><img src="assets/screenshots/laboratorio-estudiante.png" alt="Gráfica de radar de horas de laboratorio por estudiante" width="460"></td>
-  </tr>
-</table>
-
-### La respuesta unificada
-
-La siguiente captura muestra la respuesta de `GET http://localhost:3003/api/etl/dashboard`, que es el resultado de la integración: los datos de las tres fuentes en un solo objeto, ya con los totales calculados.
-
-<p align="center">
-  <img src="assets/screenshots/api-integrada.png" alt="Respuesta JSON unificada del servicio core" width="760">
-</p>
-
 ## El tablero
 
 | Indicador o gráfica | Qué representa |
@@ -277,7 +244,7 @@ Devuelve el estado de cada servicio origen. Si los tres aparecen `online`, la in
 ```text
 academic-data-integration-platform/
 ├── package.json              Orquestación con concurrently
-├── assets/                   Banner e imágenes del README
+├── assets/                   Banner del README
 ├── academic-record/          API de información académica (PostgreSQL)
 │   └── src/
 │       ├── app.ts
